@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Mission - Full Orbit Leadership</title>
+    <link rel="icon" type="image/png" href="img/icononly_nobuffer.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0a0f1a;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(10, 15, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #64b3f4;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #64b3f4;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 120px 0 80px;
+            color: white;
+        }
+        
+        .hero-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #0a0f1a 0%, #1a1f3a 50%, #2a2f4a 100%);
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            color: #b0c4de;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content-section {
+            background: white;
+            color: #333;
+            padding: 5rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+        
+        .section-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .value-card {
+            background: #f8fafc;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 4px solid #667eea;
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 5rem 0;
+        }
+        
+        .experience-content {
+            text-align: center;
+        }
+        
+        .experience-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .companies-list {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .companies-list h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .companies {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .approach-section {
+            background: #f8fafc;
+            padding: 5rem 0;
+        }
+        
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .approach-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .approach-card h4 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .experience-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Full Orbit Leadership</a>
+            <ul class="nav-links">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="mission.html">Mission</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="index.html#consultation" class="cta-button">Executive Strategy Session</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Our Mission</h1>
+            <p>We elevate careers and transform lives through exceptional leadership development. Our mission is to empower leaders across all industries, recognizing that your career is a vital part of your broader life experience.</p>
+        </div>
+    </section>
+
+    <!-- Mission Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-content">
+                <p>Through transformative conversations, we ignite personal growth and professional success, helping you move beyond perceived limits. We understand that exceptional leadership requires navigating complex systems, managing high-stakes decisions, and driving innovation under pressure.</p>
+                
+                <p>We are dedicated to elevating diverse voices, especially those underrepresented in leadership roles. By advocating for inclusive excellence, we fuel innovation and expand what's achievable. Together, we're creating new opportunities for leadership excellence.</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🌟</div>
+                    <h3>Complex Systems Leadership</h3>
+                    <p>Drawing from high-stakes environments where precision and innovation are paramount, we help leaders excel under pressure.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Inclusive Excellence</h3>
+                    <p>Committed to developing diverse leadership that drives better decisions and stronger organizational performance.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>Transformative Growth</h3>
+                    <p>Holistic support using proven coaching tools to unlock your full potential and navigate your career path with clarity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <div class="container">
+            <div class="experience-content">
+                <h2>Why Full Orbit Leadership?</h2>
+                <p>We bring over 100 years of combined professional experience in industry-leading organizations. Our deep expertise in complex, high-performance environments helps us equip you to overcome challenges, pioneer innovations, and excel in today's evolving business landscape.</p>
+                
+                <div class="experience-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Years Combined Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Leaders Developed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">92%</div>
+                        <div class="stat-label">Promotion Success Rate</div>
+                    </div>
+                </div>
+                
+                <div class="companies-list">
+                    <h4>Our Leadership Experience Spans Industry Leaders Including:</h4>
+                    <div class="companies">
+                        NASA • Lockheed Martin • Planet • Peraton • KBR • Orbital Sciences • Salesforce • IBM • Saildrone • Tableau
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="approach-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Coaching Approach</h2>
+                <p>Full Orbit Leadership provides holistic support using proven coaching methodologies</p>
+            </div>
+            
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <h4>Active Listening</h4>
+                    <p>Deep, focused attention to understand your unique challenges and aspirations.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <h4>Strategic Questioning</h4>
+                    <p>Challenging and thoughtful questions that unlock new perspectives and insights.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <h4>Accountability Partnership</h4>
+                    <p>Ongoing support and follow-up to ensure sustained progress and growth.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <h4>Results-Oriented</h4>
+                    <p>Practical strategies and frameworks designed for measurable leadership impact.</p>
+                </div>
+            </div>
+            
+            <div class="section-content">
+                <p>Through our coaching, you'll gain valuable insights, develop new perspectives, and acquire the skills and strategies necessary to thrive in complex organizational environments. We believe that everyone deserves access to supportive guidance and encouragement, especially those who may face unique challenges or barriers in their professional journeys.</p>
+                
+                <p>If you're ready to elevate your leadership impact and embrace your full potential, we invite you to join us on this journey of growth and empowerment. Together, we'll work towards building a more inclusive and diverse leadership landscape, one coaching conversation at a time.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
