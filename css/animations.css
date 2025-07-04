@@ -1,0 +1,75 @@
+/* Full Orbit Leadership - Animations */
+
+/* Orbit Animation Keyframes */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Orbit Glow Effects */
+@keyframes orbit1-glow {
+    0%, 3.33%, 96.67%, 100% { 
+        border-color: rgba(100, 179, 244, 0.3); 
+        box-shadow: none; 
+    }
+    1.67% { 
+        border-color: #ff6b6b; 
+        box-shadow: 0 0 20px #ff6b6b, inset 0 0 20px rgba(255, 107, 107, 0.2); 
+    }
+}
+
+@keyframes orbit2-glow {
+    0%, 4%, 96%, 100% { 
+        border-color: rgba(100, 179, 244, 0.3); 
+        box-shadow: none; 
+    }
+    2% { 
+        border-color: #4ecdc4; 
+        box-shadow: 0 0 25px #4ecdc4, inset 0 0 25px rgba(78, 205, 196, 0.2); 
+    }
+}
+
+@keyframes orbit3-glow {
+    0%, 5%, 95%, 100% { 
+        border-color: rgba(100, 179, 244, 0.3); 
+        box-shadow: none; 
+    }
+    2.5% { 
+        border-color: #00ff88; 
+        box-shadow: 0 0 30px #00ff88, inset 0 0 30px rgba(0, 255, 136, 0.2); 
+    }
+}
+
+/* Dot Glow Effects */
+@keyframes dot1-glow {
+    0%, 3.33%, 96.67%, 100% { 
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        box-shadow: 0 0 10px rgba(102, 126, 234, 0.6); 
+    }
+    1.67% { 
+        background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+        box-shadow: 0 0 25px #ff6b6b, 0 0 50px rgba(255, 107, 107, 0.4); 
+    }
+}
+
+@keyframes dot2-glow {
+    0%, 4%, 96%, 100% { 
+        background: linear-gradient(135deg, #64b3f4, #667eea);
+        box-shadow: 0 0 10px rgba(100, 179, 244, 0.6); 
+    }
+    2% { 
+        background: linear-gradient(135deg, #4ecdc4, #56d9ce);
+        box-shadow: 0 0 25px #4ecdc4, 0 0 50px rgba(78, 205, 196, 0.4); 
+    }
+}
+
+@keyframes dot3-glow {
+    0%, 5%, 95%, 100% { 
+        background: linear-gradient(135deg, #b0c4de, #64b3f4);
+        box-shadow: 0 0 10px rgba(176, 196, 222, 0.6); 
+    }
+    2.5% { 
+        background: linear-gradient(135deg, #00ff88, #33ff99);
+        box-shadow: 0 0 25px #00ff88, 0 0 50px rgba(0, 255, 136, 0.4); 
+    }
+}

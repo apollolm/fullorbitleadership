@@ -1,0 +1,158 @@
+/* Full Orbit Leadership - Team Page Styles */
+
+/* Override body background for team page */
+body {
+    background: #f8fafc;
+}
+
+/* Main Content */
+.main-content {
+    padding: 120px 0 80px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #718096;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: white;
+    margin-bottom: 4rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.anchor-offset {
+    display: block;
+    position: relative;
+    top: -120px;
+    visibility: hidden;
+}
+
+.member-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    padding: 3rem;
+    align-items: start;
+}
+
+.member-photo-large {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.member-photo-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-info h2 {
+    font-size: 2.2rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.member-role {
+    color: #667eea;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.member-bio {
+    color: #4a5568;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.member-bio p {
+    margin-bottom: 1.5rem;
+}
+
+.member-contact {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+}
+
+.contact-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.linkedin-link {
+    background: #0077b5;
+}
+
+.linkedin-link:hover {
+    box-shadow: 0 10px 25px rgba(0, 119, 181, 0.3);
+}
+
+/* Placeholder for missing photos */
+.member-photo-placeholder {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive - Team Page */
+@media (max-width: 768px) {
+    .member-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+        text-align: center;
+    }
+    
+    .member-photo-large,
+    .member-photo-placeholder {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+}
