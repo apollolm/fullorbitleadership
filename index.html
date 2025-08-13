@@ -3,28 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Orbit Leadership - Executive Leadership Development</title>
+    <title>Full Orbit - Leadership, AI & Organizational Excellence</title>
     <link rel="icon" type="image/png" href="img/icononly_nobuffer.png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* Option A: Three-Column Services Layout */
+        .hero h1 { font-size: 3rem; margin-bottom: 1.5rem; }
+        .hero-subtitle { font-size: 1.3rem; margin-bottom: 2rem; color: #b0c4de; }
+        
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .offering-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .offering-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        .offering-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .offering-card h3 {
+            color: #1a1a1a;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .offering-description {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+        
+        .offering-highlights {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .offering-highlights li {
+            color: #2d3748 !important;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-weight: 400;
+            font-size: 0.95rem;
+        }
+        
+        .offering-highlights li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #64b3f4;
+            font-weight: bold;
+        }
+        
+        .offering-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+            display: inline-block;
+            margin-top: auto;
+        }
+        
+        .offering-cta:hover {
+            transform: scale(1.05);
+        }
+        
+        .leadership { --accent: #667eea; }
+        .ai-consulting { --accent: #4facfe; }
+        .org-health { --accent: #43e97b; }
+        
+        .offering-card.leadership:hover { box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3); }
+        .offering-card.ai-consulting:hover { box-shadow: 0 20px 40px rgba(79, 172, 254, 0.3); }
+        .offering-card.org-health:hover { box-shadow: 0 20px 40px rgba(67, 233, 123, 0.3); }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav class="container">
             <a href="#" class="logo">
-                <img src="img/icononly_nobuffer.png" alt="Full Orbit Leadership Icon" class="logo-icon">
-                Full Orbit Leadership
+                <img src="img/icononly_nobuffer.png" alt="Full Orbit Icon" class="logo-icon">
+                Full Orbit
             </a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="mission.html">Mission</a></li>
+                <li><a href="#offerings">Our Offerings</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="team.html">Team</a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdW-80nupO4xDm3IVnpPjPym00ZDZRnypTiLREPT_r74PhPLA/viewform?pli=1" target="_blank">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdW-80nupO4xDm3IVnpPjPym00ZDZRnypTiLREPT_r74PhPLA/viewform?pli=1" class="cta-button" target="_blank">Executive Strategy Session</a>
+            <a href="#contact" class="cta-button">Get Started</a>
         </nav>
     </header>
 
@@ -33,25 +128,11 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Elevate Your <span class="highlight">Executive Impact</span> and Leadership Presence</h1>
-                    <p>Strategic leadership coaching for high-achieving executives and emerging leaders who demand excellence. Transform your leadership effectiveness and accelerate organizational performance.</p>
+                    <h1>Transform Your Organization's <span class="highlight">Full Orbit</span></h1>
+                    <p class="hero-subtitle">Leadership Excellence • AI-Powered Innovation • Organizational Health</p>
+                    <p>Comprehensive solutions for forward-thinking organizations ready to elevate performance across leadership development, technology adoption, and organizational effectiveness.</p>
                     
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-number">150+</div>
-                            <div class="stat-label">Leaders Developed</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">92%</div>
-                            <div class="stat-label">Promotion Rate</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">Fortune 500</div>
-                            <div class="stat-label">Client Experience</div>
-                        </div>
-                    </div>
-                    
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdW-80nupO4xDm3IVnpPjPym00ZDZRnypTiLREPT_r74PhPLA/viewform?pli=1" class="cta-large" target="_blank">Schedule Your Strategy Session</a>
+                    <a href="#offerings" class="cta-large">Explore Our Solutions</a>
                 </div>
                 
                 <div class="hero-visual">
@@ -66,8 +147,65 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <!-- Offerings Section -->
+    <section class="services" id="offerings">
+        <div class="container">
+            <div class="section-header">
+                <h2>Three Pillars of Organizational Excellence</h2>
+                <p>Integrated solutions that work together to transform your organization's performance</p>
+            </div>
+            
+            <div class="offerings-grid">
+                <!-- Leadership Development -->
+                <div class="offering-card leadership">
+                    <div class="offering-icon">👑</div>
+                    <h3>Leadership Development</h3>
+                    <p class="offering-description">Elite executive coaching and leadership development programs for C-suite, senior leaders, and high-potential professionals.</p>
+                    <ul class="offering-highlights">
+                        <li>C-Suite Excellence Programs</li>
+                        <li>Executive Presence & Strategic Thinking</li>
+                        <li>Board Readiness & Governance</li>
+                        <li>Leadership Acceleration for Rising Stars</li>
+                        <li>Crisis Leadership & Decision-Making</li>
+                    </ul>
+                    <a href="#leadership-details" class="offering-cta">Learn More</a>
+                </div>
+
+                <!-- AI Consulting -->
+                <div class="offering-card ai-consulting">
+                    <div class="offering-icon">🤖</div>
+                    <h3>AI Development Acceleration</h3>
+                    <p class="offering-description">Transform your development cycles with AI-powered tools and workflows. 8-module program combining technical training and organizational change management.</p>
+                    <ul class="offering-highlights">
+                        <li>10x Faster Development Cycles</li>
+                        <li>AI Coding Tools Mastery</li>
+                        <li>Workflow Integration & Best Practices</li>
+                        <li>Technical Leadership Coaching</li>
+                        <li>Organizational AI Adoption Strategy</li>
+                    </ul>
+                    <a href="https://www.fullorbit.ai" target="_blank" class="offering-cta">Visit Full Orbit AI</a>
+                </div>
+
+                <!-- Organizational Health -->
+                <div class="offering-card org-health">
+                    <div class="offering-icon">🌟</div>
+                    <h3>Organizational Health Consulting</h3>
+                    <p class="offering-description">Comprehensive organizational assessment and transformation programs to build resilient, high-performing cultures and systems.</p>
+                    <ul class="offering-highlights">
+                        <li>Culture Assessment & Transformation</li>
+                        <li>Team Dynamics & Collaboration</li>
+                        <li>Change Management Excellence</li>
+                        <li>Performance System Optimization</li>
+                        <li>Inclusive Leadership Development</li>
+                    </ul>
+                    <a href="#contact" class="offering-cta">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Details Section -->
+    <section class="services" id="leadership-details">
         <div class="container">
             <div class="section-header">
                 <h2>Executive Leadership Development</h2>
@@ -117,41 +255,38 @@
         </div>
     </section>
 
-    <!-- Positioning Section -->
-    <section class="positioning" id="positioning">
+    <!-- Integration Message -->
+    <section class="positioning" id="about">
         <div class="container">
             <div class="positioning-content">
-                <h2>The Full Orbit Leadership Advantage</h2>
-                <p>We bring a unique perspective forged in high-stakes, complex industries where precision, innovation, and leadership under pressure are paramount. Our approach combines battle-tested experience with cutting-edge leadership development methodologies.</p>
+                <h2>The Full Orbit Advantage</h2>
+                <p>Our three practice areas work synergistically to create comprehensive organizational transformation. Whether you need leadership development, AI adoption, or organizational health improvement, our integrated approach ensures lasting impact.</p>
                 
                 <div class="differentiators">
                     <div class="differentiator">
-                        <h3>🎖️ Complex Systems Leadership</h3>
-                        <p>Deep experience in high-stakes environments where failure isn't an option and leaders must excel under pressure.</p>
+                        <h3>🎯 Integrated Solutions</h3>
+                        <p>Our three practice areas complement each other, creating holistic transformation rather than isolated improvements.</p>
                     </div>
                     <div class="differentiator">
-                        <h3>🌟 Innovation-Driven</h3>
-                        <p>Proven track record helping leaders drive breakthrough innovation and navigate rapid technological change.</p>
+                        <h3>🚀 Proven Results</h3>
+                        <p>Battle-tested methodologies with measurable outcomes across leadership effectiveness, technical adoption, and organizational performance.</p>
                     </div>
                     <div class="differentiator">
-                        <h3>📈 Results-Oriented</h3>
-                        <p>Data-driven approach with measurable outcomes. Our clients consistently achieve promotion and performance breakthroughs.</p>
-                    </div>
-                    <div class="differentiator">
-                        <h3>🤝 Inclusive Excellence</h3>
-                        <p>Committed to developing diverse leadership that drives better decisions and stronger organizational performance.</p>
+                        <h3>🤝 Expert Team</h3>
+                        <p>Seasoned professionals with deep experience in complex, high-performance organizations and cutting-edge technology.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    
     <!-- Team Section -->
     <section class="team" id="team">
         <div class="container">
             <div class="section-header">
-                <h2>Your Leadership Development Team</h2>
-                <p>Seasoned executives and certified coaches with deep experience in complex, high-performance organizations</p>
+                <h2>Your Full Orbit Team</h2>
+                <p>Expert practitioners across leadership development, AI consulting, and organizational transformation</p>
                 <p><a href="team.html" style="color: #667eea; text-decoration: none; font-weight: 600;">Meet the full team →</a></p>
             </div>
             
@@ -183,34 +318,16 @@
                         <p class="role">Partner & Executive Mentor</p>
                     </div>
                 </a>
-                <a href="team.html#rick-thompson" class="team-member-link">
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="img/rick.jpeg" alt="Rick Thompson">
-                        </div>
-                        <h3>Rick Thompson</h3>
-                        <p class="role">Partner & C-Suite Coach</p>
-                    </div>
-                </a>
-                <a href="team.html#amber-carrasco" class="team-member-link">
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="img/amber.jpeg" alt="Amber Carrasco">
-                        </div>
-                        <h3>Amber Carrasco</h3>
-                        <p class="role">Partner & Leadership Coach</p>
-                    </div>
-                </a>
             </div>
         </div>
     </section>
 
     <!-- Final CTA -->
-    <section class="final-cta" id="consultation">
+    <section class="final-cta" id="contact">
         <div class="container">
-            <h2>Ready to Amplify Your Leadership Impact?</h2>
-            <p>Begin with a strategic consultation to assess your leadership goals and design your development trajectory.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdW-80nupO4xDm3IVnpPjPym00ZDZRnypTiLREPT_r74PhPLA/viewform?pli=1" class="cta-large" target="_blank">Book Your Executive Strategy Session</a>
+            <h2>Ready to Transform Your Organization's Full Orbit?</h2>
+            <p>Begin with a strategic consultation to identify the right combination of solutions for your goals.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdW-80nupO4xDm3IVnpPjPym00ZDZRnypTiLREPT_r74PhPLA/viewform?pli=1" class="cta-large" target="_blank">Schedule Your Strategy Session</a>
         </div>
     </section>
 
@@ -219,17 +336,17 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="img/icononly_nobuffer.png" alt="Full Orbit Leadership Icon" class="footer-icon">
-                    <h4>Full Orbit Leadership</h4>
-                    <p>Executive Leadership Development</p>
+                    <img src="img/icononly_nobuffer.png" alt="Full Orbit Icon" class="footer-icon">
+                    <h4>Full Orbit</h4>
+                    <p>Leadership • AI • Organizational Excellence</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h5>Services</h5>
+                        <h5>Solutions</h5>
                         <ul>
-                            <li><a href="#services">C-Suite Excellence</a></li>
-                            <li><a href="#services">High-Impact Leadership</a></li>
-                            <li><a href="#services">Leadership Acceleration</a></li>
+                            <li><a href="#offerings">Leadership Development</a></li>
+                            <li><a href="https://www.fullorbit.ai" target="_blank">AI Consulting</a></li>
+                            <li><a href="#offerings">Organizational Health</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -237,13 +354,13 @@
                         <ul>
                             <li><a href="mission.html">Mission</a></li>
                             <li><a href="team.html">Team</a></li>
-                            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdW-80nupO4xDm3IVnpPjPym00ZDZRnypTiLREPT_r74PhPLA/viewform?pli=1" target="_blank">Contact</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Full Orbit Leadership. All rights reserved.</p>
+                <p>&copy; 2024 Full Orbit. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -254,14 +371,12 @@
             navLinks.classList.toggle('active');
         }
         
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('nav-links').classList.remove('active');
             });
         });
         
-        // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
             const nav = document.querySelector('nav');
             const navLinks = document.getElementById('nav-links');
