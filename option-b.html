@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Orbit - Leadership, AI & Organizational Excellence</title>
+    <link rel="icon" type="image/png" href="img/icononly_nobuffer.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* Option B: Tabbed Interface */
+        .hero h1 { font-size: 3rem; margin-bottom: 1.5rem; }
+        .hero-subtitle { font-size: 1.3rem; margin-bottom: 2rem; color: #b0c4de; }
+        
+        .tabs-container {
+            margin-top: 3rem;
+        }
+        
+        .tab-navigation {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            padding: 0.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .tab-button {
+            flex: 1;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: none;
+            color: #b0c4de;
+            cursor: pointer;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .offering-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        
+        .offering-content h3 {
+            font-size: 2.5rem;
+            color: #64b3f4;
+            margin-bottom: 1.5rem;
+        }
+        
+        .offering-description {
+            font-size: 1.2rem;
+            color: #b0c4de;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .offering-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .feature-item h5 {
+            color: #64b3f4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-item p {
+            color: #e8f4f8;
+            font-size: 0.9rem;
+        }
+        
+        .offering-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .visual-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .visual-stats {
+            text-align: center;
+        }
+        
+        .stat-large {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #64b3f4;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #b0c4de;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .offering-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+        
+        .offering-cta:hover {
+            transform: translateY(-3px);
+        }
+        
+        .leadership { --accent-color: #667eea; }
+        .ai-consulting { --accent-color: #4facfe; }
+        .org-health { --accent-color: #43e97b; }
+        
+        @media (max-width: 768px) {
+            .tab-navigation {
+                flex-direction: column;
+                border-radius: 15px;
+            }
+            .tab-button {
+                border-radius: 10px;
+                margin-bottom: 0.5rem;
+            }
+            .offering-detail {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .offering-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                <img src="img/icononly_nobuffer.png" alt="Full Orbit Icon" class="logo-icon">
+                Full Orbit
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transform Your Organization's <span class="highlight">Full Orbit</span></h1>
+                    <p class="hero-subtitle">Leadership Excellence • AI-Powered Innovation • Organizational Health</p>
+                    <p>Comprehensive solutions for forward-thinking organizations ready to elevate performance across three critical dimensions of success.</p>
+                    
+                    <a href="#solutions" class="cta-large">Explore Our Solutions</a>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="orbit-container">
+                        <div class="orbit"></div>
+                        <div class="orbit"></div>
+                        <div class="orbit"></div>
+                        <div class="center-star"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="services" id="solutions">
+        <div class="container">
+            <div class="section-header">
+                <h2>Three Pillars of Organizational Excellence</h2>
+                <p>Choose your focus area or discover how our integrated approach transforms entire organizations</p>
+            </div>
+            
+            <div class="tabs-container">
+                <div class="tab-navigation">
+                    <button class="tab-button active" onclick="showTab('leadership')">Leadership Development</button>
+                    <button class="tab-button" onclick="showTab('ai-consulting')">AI Acceleration</button>
+                    <button class="tab-button" onclick="showTab('org-health')">Organizational Health</button>
+                </div>
+
+                <!-- Leadership Development Tab -->
+                <div id="leadership" class="tab-content active leadership">
+                    <div class="offering-detail">
+                        <div class="offering-content">
+                            <h3>Leadership Development</h3>
+                            <p class="offering-description">Elite executive coaching and leadership development programs for C-suite executives, senior leaders, and high-potential professionals ready to shape the future.</p>
+                            
+                            <div class="offering-features">
+                                <div class="feature-item">
+                                    <h5>C-Suite Excellence</h5>
+                                    <p>Strategic thinking, board dynamics, crisis leadership</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h5>Executive Presence</h5>
+                                    <p>Influence, communication, stakeholder management</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h5>Leadership Acceleration</h5>
+                                    <p>Fast-track development for rising stars</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h5>Organizational Impact</h5>
+                                    <p>Performance optimization and team transformation</p>
+                                </div>
+                            </div>
+                            
+                            <a href="index.html" class="offering-cta">Explore Leadership Programs</a>
+                        </div>
+                        
+                        <div class="offering-visual">
+                            <div class="visual-icon">👑</div>
+                            <div class="visual-stats">
+                                <span class="stat-large">150+</span>
+                                <p class="stat-label">Leaders Developed</p>
+                                
+                                <span class="stat-large">92%</span>
+                                <p class="stat-label">Promotion Rate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Consulting Tab -->
+                <div id="ai-consulting" class="tab-content ai-consulting">
+                    <div class="offering-detail">
+                        <div class="offering-content">
+                            <h3>AI Development Acceleration</h3>
+                            <p class="offering-description">Transform your development cycles with AI-powered tools and workflows. Our 8-module program combines technical mastery with organizational change management for sustainable adoption.</p>
+                            
+                            <div class="offering-features">
+                                <div class="feature-item">
+                                    <h5>Technical Training</h5>
+                                    <p>Master AI coding tools like Claude Code and Gemini CLI</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h5>Workflow Integration</h5>
+                                    <p>Seamless adoption into existing development processes</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h5>Leadership Coaching</h5>
+                                    <p>Guide teams through technological transformation</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h5>Organizational Strategy</h5>
+                                    <p>Change management for AI adoption at scale</p>
+                                </div>
+                            </div>
+                            
+                            <a href="https://www.fullorbit.ai" target="_blank" class="offering-cta">Visit Full Orbit AI</a>
+                        </div>
+                        
+                        <div class="offering-visual">
+                            <div class="visual-icon">🤖</div>
+                            <div class="visual-stats">
+                                <span class="stat-large">10x</span>
+                                <p class="stat-label">Faster Development</p>
+                                
+                                <span class="stat-large">8</span>
+                                <p class="stat-label">Module Program</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organizational Health Tab -->
+                <div id="org-health" class="tab-content org-health">
+                    <div class="offering-detail">
+                        <div class="offering-content">
+                            <h3>Organizational Health Consulting</h3>
+                            <p class="offering-description">Comprehensive organizational assessment and transformation programs to build resilient, high-performing cultures and systems that adapt and thrive in complex environments.</p>
+                            
+                            <div class="offering-features">
+                                <div class="feature-item">
+                                    <h5>Culture Transformation</h5>
+                                    <p>Assessment, design, and implementation of healthy cultures</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h5>Team Optimization</h5>
+                                    <p>Dynamics, collaboration, and performance systems</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h5>Change Management</h5>
+                                    <p>Strategic transformation and resilience building</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h5>Inclusive Leadership</h5>
+                                    <p>Diversity, equity, and inclusive excellence initiatives</p>
+                                </div>
+                            </div>
+                            
+                            <a href="#contact" class="offering-cta">Learn About Our Process</a>
+                        </div>
+                        
+                        <div class="offering-visual">
+                            <div class="visual-icon">🌟</div>
+                            <div class="visual-stats">
+                                <span class="stat-large">360°</span>
+                                <p class="stat-label">Assessment Process</p>
+                                
+                                <span class="stat-large">100%</span>
+                                <p class="stat-label">Custom Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="positioning">
+        <div class="container">
+            <div class="positioning-content">
+                <h2>The Integrated Full Orbit Approach</h2>
+                <p>While each practice area delivers powerful results independently, the true transformation happens when they work together. Leadership development enhances AI adoption. Organizational health supports both technical and leadership changes. Together, they create sustainable competitive advantage.</p>
+                
+                <div class="differentiators">
+                    <div class="differentiator">
+                        <h3>🎯 Holistic Transformation</h3>
+                        <p>Address leadership, technology, and culture simultaneously for lasting impact.</p>
+                    </div>
+                    <div class="differentiator">
+                        <h3>🚀 Accelerated Results</h3>
+                        <p>Integrated solutions deliver faster, more sustainable outcomes than isolated initiatives.</p>
+                    </div>
+                    <div class="differentiator">
+                        <h3>🌟 Future-Ready Organizations</h3>
+                        <p>Build adaptive capacity across all dimensions of organizational performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="contact">
+        <div class="container">
+            <h2>Ready to Transform Your Organization's Full Orbit?</h2>
+            <p>Start with a strategic consultation to identify the optimal combination of solutions for your unique challenges and goals.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdW-80nupO4xDm3IVnpPjPym00ZDZRnypTiLREPT_r74PhPLA/viewform?pli=1" class="cta-large" target="_blank">Schedule Your Strategy Session</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="img/icononly_nobuffer.png" alt="Full Orbit Icon" class="footer-icon">
+                    <h4>Full Orbit</h4>
+                    <p>Leadership • AI • Organizational Excellence</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>Solutions</h5>
+                        <ul>
+                            <li><a href="#" onclick="showTab('leadership'); return false;">Leadership Development</a></li>
+                            <li><a href="https://www.fullorbit.ai" target="_blank">AI Consulting</a></li>
+                            <li><a href="#" onclick="showTab('org-health'); return false;">Organizational Health</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="mission.html">Mission</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Full Orbit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+        
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-links').classList.remove('active');
+            });
+        });
+        
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('nav-links');
+            if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
