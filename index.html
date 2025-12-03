@@ -12,6 +12,11 @@
         /* Option A: Three-Column Services Layout */
         .hero h1 { font-size: 3rem; margin-bottom: 1.5rem; }
         .hero-subtitle { font-size: 1.3rem; margin-bottom: 2rem; color: #b0c4de; }
+
+        /* Adjust hero padding to account for fixed header + banner */
+        .hero .hero-content {
+            padding-top: 150px;
+        }
         
         .offerings-grid {
             display: grid;
@@ -102,6 +107,72 @@
         .offering-card.leadership:hover { box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3); }
         .offering-card.ai-consulting:hover { box-shadow: 0 20px 40px rgba(79, 172, 254, 0.3); }
         .offering-card.org-health:hover { box-shadow: 0 20px 40px rgba(67, 233, 123, 0.3); }
+
+        /* Event Banner */
+        .event-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0;
+            text-align: center;
+            position: fixed;
+            top: 83px;
+            width: 100%;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .event-banner .container {
+            padding: 1rem 20px;
+        }
+
+        .event-banner-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .event-banner-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .event-banner-date {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .event-banner-cta {
+            background: white;
+            color: #667eea;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .event-banner-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .event-banner-content {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .event-banner-text {
+                font-size: 1rem;
+            }
+
+            .event-banner-date {
+                font-size: 1.1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -123,6 +194,17 @@
             <a href="#contact" class="cta-button">Get Started</a>
         </nav>
     </header>
+
+    <!-- Event Banner -->
+    <div class="event-banner">
+        <div class="container">
+            <div class="event-banner-content">
+                <span class="event-banner-text">Join us for a special virtual event!</span>
+                <span class="event-banner-date">December 9, 2025</span>
+                <a href="https://luma.com/k4nxtdpv" target="_blank" class="event-banner-cta">Register Now</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
